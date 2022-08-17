@@ -2,6 +2,7 @@ package com.kalanso.apigestionregion.entites;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,10 +20,13 @@ public class Pays {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPays;
+	
+	@Column(length = 50,  unique =true)
     private String nomPays;
     
     @OneToMany(mappedBy = "pays")
     private List<Region> regions;
+    
     
 	public List<Region> getRegions() {
 		return regions;

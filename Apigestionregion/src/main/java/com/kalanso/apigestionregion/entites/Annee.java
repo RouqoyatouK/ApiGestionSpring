@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
@@ -23,7 +22,9 @@ import javax.persistence.Table;
 public class Annee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idAnnee;    
+	private int idAnnee;  
+	
+	@Column(length = 50,  unique =true)
 	private Date dateannee;
 	
 //	@OneToMany(mappedBy = "annee")
